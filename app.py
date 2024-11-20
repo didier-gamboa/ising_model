@@ -10,7 +10,7 @@ st.title("Olimpiada Nacional de Física")
 st.sidebar.title("Pámetros de la Simulación")
 L = st.sidebar.number_input("Tamaño de la red (L)", min_value=10, max_value=100, value=20)
 temperatura = st.sidebar.slider("Temperatura (T)", min_value=0.1, max_value=5.0, value=2.0)
-ciclos = st.sidebar.number_input("Número de ciclos de Monte Carlo", min_value=10, max_value=500, value=50)
+ciclos = st.sidebar.number_input("Número de ciclos de Monte Carlo", min_value=10, max_value=750, value=50)
 
 
 if st.sidebar.button("Simular"):

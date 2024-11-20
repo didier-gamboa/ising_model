@@ -1,4 +1,5 @@
 import numpy as np
+import pandas as pd
 import streamlit as st
 from src import randomlattice, simulate_metropolis
 import matplotlib.pyplot as plt
@@ -44,6 +45,11 @@ if st.sidebar.button("Simular"):
     ax2.axis('off') 
     st.pyplot(fig2)
 
+    data = pd.DataFrame(
+        [sample_magnetisation],  # Fila con valores
+    )
+    data.index = ["Magnetización"]  
+
     mean_magnetisation = np.mean(sample_magnetisation)
 
     st.header("Magnetización en cada Experimento")
@@ -56,3 +62,5 @@ if st.sidebar.button("Simular"):
     ax3.legend(loc='upper right')
     ax3.grid(True, linestyle='--', alpha=0.7)
     st.pyplot(fig3)
+
+    st.table(data)
